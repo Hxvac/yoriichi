@@ -6,7 +6,6 @@
   <title>Yoriichi | 3D Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
   <style>
-    /* ----------------- RESET & BASE ----------------- */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Fugaz One', cursive;
@@ -20,7 +19,6 @@
 
     section { scroll-margin-top: 80px; padding: 3rem 2rem; }
 
-    /* ----------------- NAV ----------------- */
     nav {
       position: fixed;
       top: 0;
@@ -42,7 +40,6 @@
     }
     nav a:hover { background:#333; transform:scale(1.05); }
 
-    /* ----------------- HERO ----------------- */
     .hero{
       position:relative;
       height:100vh;
@@ -81,11 +78,9 @@
     @keyframes animeGlow { 0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;} }
     @keyframes bounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(10px);} }
 
-    /* ----------------- PROFILE PICTURE ----------------- */
     .zenitsu-banner{ display:flex; justify-content:center; align-items:center; background:#0d0d0d; padding:2rem 0; }
     .zenitsu-banner img{ width:250px; height:auto; border-radius:50%; border:3px solid #ff9f43; }
 
-    /* ----------------- PAST WORK ----------------- */
     .timeline{ background:#1a1a1a; }
     .timeline h2{ text-align:center; margin-bottom:2rem; }
     .timeline-step{ border-left:4px solid #ff9f43; margin-left:1rem; padding-left:1rem; margin-bottom:2rem; position:relative; }
@@ -95,72 +90,62 @@
     .img-wrap{ position:relative; overflow:hidden; border-radius:10px; }
     .img-wrap img{ width:260px; border-radius:10px; border:2px solid #444; transition:transform .3s ease; object-fit:cover; display:block; }
     .img-wrap:hover img{ transform:scale(1.05); }
-    /* katana glare */
     .img-wrap::after{ content:""; position:absolute; top:0; left:-75%; width:50%; height:100%; background:linear-gradient(120deg,rgba(255,255,255,0)0%,rgba(255,255,255,.6)50%,rgba(255,255,255,0)100%); transform:skewX(-20deg); }
     .img-wrap:hover::after{ animation:glare .6s ease forwards; }
     @keyframes glare { to { left:125%; } }
 
-    /* ----------------- COST & CONTACT ----------------- */
     .panel{ background:#1a1a1a; backdrop-filter:blur(8px); border-radius:12px; max-width:600px; margin:3rem auto; text-align:center; border:1px solid rgba(255,255,255,.1); }
     .panel h2{ margin-bottom:2rem; }
   </style>
 </head>
 <body>
-  <!-- NAV -->
   <nav>
     <a href="#experience">Past Work</a>
     <a href="#cost">Cost</a>
     <a href="#contact">Discord Profile</a>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <h1>Yoriichi</h1>
     <p>Roblox 3D Modeler</p>
     <div class="scroll-down">↓</div>
   </section>
 
-  <!-- PROFILE PICTURE -->
   <section class="zenitsu-banner">
-    <img src="images/profile.png" alt="Profile Picture">
+    <img src="Images/profile.png" alt="Profile Picture">
   </section>
 
-  <!-- TITLE -->
   <h2 style="text-align:center;font-size:3rem;color:#ff9f43;margin-top:1rem;">My Portfolio</h2>
 
-  <!-- PAST WORK -->
   <section id="experience" class="timeline">
     <h2>Past Work</h2>
     <div class="timeline-step">Contributed to TS Industries – Modeled assets for an upcoming horror project in a group of over 1 million members.</div>
     <div class="timeline-step">4+ years of modeling for anime-themed Roblox environments.</div>
 
     <div class="past-gallery">
-      <div class="img-wrap"><img src="images/model1.png" alt="Past Work 1"></div>
-      <div class="img-wrap"><img src="images/model2.png" alt="Past Work 2"></div>
-      <div class="img-wrap"><img src="images/model3.png" alt="Past Work 3"></div>
-      <div class="img-wrap"><img src="images/model4.png" alt="Past Work 4"></div>
-      <div class="img-wrap"><img src="images/model5.png" alt="Past Work 5"></div>
-      <div class="img-wrap"><img src="images/model6.png" alt="Past Work 6"></div>
-      <div class="img-wrap"><img src="images/model7.png" alt="Past Work 7"></div>
-      <div class="img-wrap"><img src="images/model8.png" alt="Past Work 8"></div>
+      <div class="img-wrap"><img src="Images/model1.png" alt="Past Work 1"></div>
+      <div class="img-wrap"><img src="Images/model2.png" alt="Past Work 2"></div>
+      <div class="img-wrap"><img src="Images/model3.png" alt="Past Work 3"></div>
+      <div class="img-wrap"><img src="Images/model4.png" alt="Past Work 4"></div>
+      <div class="img-wrap"><img src="Images/model5.png" alt="Past Work 5"></div>
+      <div class="img-wrap"><img src="Images/model6.png" alt="Past Work 6"></div>
+      <div class="img-wrap"><img src="Images/model7.png" alt="Past Work 7"></div>
+      <div class="img-wrap"><img src="Images/model8.png" alt="Past Work 8"></div>
     </div>
   </section>
 
-  <!-- COST -->
   <section id="cost" class="panel">
     <h2>💰 Commission Pricing</h2>
-    <p>Small Projects: <strong><img src="images/robux-icon.png" alt="Robux" style="height:1em;vertical-align:middle;"> 5,000 – <img src="images/robux-icon.png" alt="Robux" style="height:1em;vertical-align:middle;"> 15,000</strong></p>
-    <p>Big Projects: <strong><img src="images/robux-icon.png" alt="Robux" style="height:1em;vertical-align:middle;"> 25,000 – <img src="images/robux-icon.png" alt="Robux" style="height:1em;vertical-align:middle;"> 70,000</strong></p>
+    <p>Small Projects: <strong><img src="Images/robux-icon.png" alt="Robux" style="height:1em;vertical-align:middle;"> 5,000 – <img src="Images/robux-icon.png" alt="Robux" style="height:1em;vertical-align:middle;"> 15,000</strong></p>
+    <p>Big Projects: <strong><img src="Images/robux-icon.png" alt="Robux" style="height:1em;vertical-align:middle;"> 25,000 – <img src="Images/robux-icon.png" alt="Robux" style="height:1em;vertical-align:middle;"> 70,000</strong></p>
     <p><em>Note: Project price varies based on complexity.</em></p>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="panel">
     <h2>連絡先 | Contact</h2>
     <p>Discord: <strong>@zenitsuagatsuma8261</strong></p>
     <p>Roblox: <a href="https://www.roblox.com/users/262557376/profile" target="_blank">View Profile</a></p>
     <p><em>Available for commissions & anime collabs.</em></p>
   </section>
-
 </body>
 </html>
