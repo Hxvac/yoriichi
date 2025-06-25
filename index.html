@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yoriichi | 3D Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
   <style>
+    /* ----------------- RESET & BASE ----------------- */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Fugaz One', cursive;
@@ -13,53 +15,94 @@
       overflow-x: hidden;
     }
 
-    /* NAV */
+    a { color:#ff9f43; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    section { scroll-margin-top: 80px; padding: 3rem 2rem; }
+
+    /* ----------------- NAV ----------------- */
     nav {
-      position: fixed; top: 0; width: 100%; background:#111; padding:1rem; z-index:1000;
-      display:flex; flex-wrap:wrap; justify-content:center; gap:1rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background:#111;
+      padding:1rem;
+      z-index:1000;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:1rem;
     }
-    nav a { color:#ff9f43; background:#1f1f1f; border:1px solid #333; padding:0.5rem 1rem; border-radius:8px; text-decoration:none; transition:.3s; }
+    nav a {
+      background:#1f1f1f;
+      border:1px solid #333;
+      padding:0.5rem 1rem;
+      border-radius:8px;
+      transition:.3s;
+    }
     nav a:hover { background:#333; transform:scale(1.05); }
 
-    /* HERO */
-    .hero{position:relative; height:100vh; background:linear-gradient(-45deg,#0d0d0d,#1f1f1f,#0d0d0d); background-size:400% 400%; animation:animeGlow 15s ease infinite; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding-top:4rem;}
-    .hero::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.07)0 2%,transparent 2% 10%);background-size:200% 200%;animation:slashMove 12s linear infinite;z-index:1;}
-    .hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.6);z-index:2;}
-    .hero>*{position:relative;z-index:3;}
-    .hero h1{font-size:6rem;text-shadow:2px 2px 8px #000;}
-    .hero p{font-size:1.2rem;margin-top:10px;color:#ff9f43;}
-    .scroll-down{margin-top:40px;animation:bounce 2s infinite;font-size:2rem;color:#ff9f43;}
+    /* ----------------- HERO ----------------- */
+    .hero{
+      position:relative;
+      height:100vh;
+      background:linear-gradient(-45deg,#0d0d0d,#1f1f1f,#0d0d0d);
+      background-size:400% 400%;
+      animation:animeGlow 15s ease infinite;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding-top:4rem;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.07)0 2%,transparent 2% 10%);
+      background-size:200% 200%;
+      animation:slashMove 12s linear infinite;
+      z-index:1;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.6);
+      z-index:2;
+    }
+    .hero > * { position:relative; z-index:3; }
+    .hero h1 { font-size:6rem; text-shadow:2px 2px 8px #000; }
+    .hero p  { font-size:1.2rem; margin-top:10px; color:#ff9f43; }
+    .scroll-down { margin-top:40px; animation:bounce 2s infinite; font-size:2rem; color:#ff9f43; }
 
-    @keyframes slashMove{0%{background-position:0 0;}100%{background-position:100% 100%;}}
-    @keyframes animeGlow{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
-    @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(10px);}}
+    @keyframes slashMove { to { background-position: 100% 100%; } }
+    @keyframes animeGlow { 0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;} }
+    @keyframes bounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(10px);} }
 
-    /* SECTIONS */
-    section{scroll-margin-top:80px; padding:3rem 2rem;}
+    /* ----------------- PROFILE PICTURE ----------------- */
+    .zenitsu-banner{ display:flex; justify-content:center; align-items:center; background:#0d0d0d; padding:2rem 0; }
+    .zenitsu-banner img{ width:250px; height:auto; border-radius:50%; border:3px solid #ff9f43; }
 
-    /* PROFILE PICTURE */
-    .zenitsu-banner{display:flex;justify-content:center;align-items:center;background:#0d0d0d;padding:2rem 0;}
-    .zenitsu-banner img{width:250px;height:auto;border-radius:50%;border:3px solid #ff9f43;}
+    /* ----------------- PAST WORK ----------------- */
+    .timeline{ background:#1a1a1a; }
+    .timeline h2{ text-align:center; margin-bottom:2rem; }
+    .timeline-step{ border-left:4px solid #ff9f43; margin-left:1rem; padding-left:1rem; margin-bottom:2rem; position:relative; }
+    .timeline-step::before{ content:""; position:absolute; top:0; left:-10px; width:16px; height:16px; background:#ff9f43; border-radius:50%; }
 
-    /* PAST WORK */
-    .timeline{background:#1a1a1a;}
-    .timeline h2{text-align:center;margin-bottom:2rem;}
-    .timeline-step{border-left:4px solid #ff9f43;margin-left:1rem;padding-left:1rem;margin-bottom:2rem;position:relative;}
-    .timeline-step::before{content:"";position:absolute;top:0;left:-10px;width:16px;height:16px;background:#ff9f43;border-radius:50%;}
-    .past-gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:2rem;}
-    .past-gallery .img-wrap{position:relative;overflow:hidden;border-radius:10px;}
-    .past-gallery img{width:260px;border-radius:10px;border:2px solid #444;transition:transform .3s ease;object-fit:cover;display:block;}
-    .past-gallery .img-wrap:hover img{transform:scale(1.05);}
+    .past-gallery{ display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; margin-top:2rem; }
+    .img-wrap{ position:relative; overflow:hidden; border-radius:10px; }
+    .img-wrap img{ width:260px; border-radius:10px; border:2px solid #444; transition:transform .3s ease; object-fit:cover; display:block; }
+    .img-wrap:hover img{ transform:scale(1.05); }
     /* katana glare */
-    .past-gallery .img-wrap::after{content:"";position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(120deg,rgba(255,255,255,.0)0%,rgba(255,255,255,.6)50%,rgba(255,255,255,.0)100%);transform:skewX(-20deg);}  
-    .past-gallery .img-wrap:hover::after{animation:glare .6s ease forwards;}
-    @keyframes glare{to{left:125%;}}
+    .img-wrap::after{ content:""; position:absolute; top:0; left:-75%; width:50%; height:100%; background:linear-gradient(120deg,rgba(255,255,255,0)0%,rgba(255,255,255,.6)50%,rgba(255,255,255,0)100%); transform:skewX(-20deg); }
+    .img-wrap:hover::after{ animation:glare .6s ease forwards; }
+    @keyframes glare { to { left:125%; } }
 
-    /* COST & CONTACT */
-    .cost-section,.glass-contact{background:#1a1a1a;backdrop-filter:blur(8px);border-radius:12px;max-width:600px;margin:3rem auto;text-align:center;border:1px solid rgba(255,255,255,.1);} 
-    .cost-section h2,.glass-contact h2{margin-bottom:2rem;}
-
-    a{color:#ff9f43;text-decoration:none;} a:hover{text-decoration:underline;}
+    /* ----------------- COST & CONTACT ----------------- */
+    .panel{ background:#1a1a1a; backdrop-filter:blur(8px); border-radius:12px; max-width:600px; margin:3rem auto; text-align:center; border:1px solid rgba(255,255,255,.1); }
+    .panel h2{ margin-bottom:2rem; }
   </style>
 </head>
 <body>
@@ -82,8 +125,8 @@
     <img src="images/profile.png" alt="Profile Picture">
   </section>
 
-  <!-- PORTFOLIO TITLE -->
-  <div class="kanji-banner" style="text-align:center;font-size:3rem;color:#ff9f43;margin-top:1rem;">My Portfolio</div>
+  <!-- TITLE -->
+  <h2 style="text-align:center;font-size:3rem;color:#ff9f43;margin-top:1rem;">My Portfolio</h2>
 
   <!-- PAST WORK -->
   <section id="experience" class="timeline">
@@ -104,16 +147,20 @@
   </section>
 
   <!-- COST -->
-  <section id="cost" class="cost-section">
+  <section id="cost" class="panel">
     <h2>💰 Commission Pricing</h2>
-    <p>Small Projects: <strong><img src='images/robux-icon.png' alt='Robux' style='height:1em;vertical-align:middle;'> 5,000 – <img src='images/robux-icon.png' alt='Robux' style='height:1em;vertical-align:middle;'> 15,000</strong></p>
-    <p>Big Projects: <strong><img src='images/robux-icon.png' alt='Robux' style='height:1em;vertical-align:middle;'> 25,000 – <img src='images/robux-icon.png' alt='Robux' style='height:1em;vertical-align:middle;'> 70,000</strong></p>
+    <p>Small Projects: <strong><img src="images/robux-icon.png" alt="Robux" style="height:1em;vertical-align:middle;"> 5,000 – <img src="images/robux-icon.png" alt="Robux" style="height:1em;vertical-align:middle;"> 15,000</strong></p>
+    <p>Big Projects: <strong><img src="images/robux-icon.png" alt="Robux" style="height:1em;vertical-align:middle;"> 25,000 – <img src="images/robux-icon.png" alt="Robux" style="height:1em;vertical-align:middle;"> 70,000</strong></p>
     <p><em>Note: Project price varies based on complexity.</em></p>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="glass-contact">
+  <section id="contact" class="panel">
     <h2>連絡先 | Contact</h2>
     <p>Discord: <strong>@zenitsuagatsuma8261</strong></p>
     <p>Roblox: <a href="https://www.roblox.com/users/262557376/profile" target="_blank">View Profile</a></p>
-    <p><em>Available for commissions & anime collabs.</
+    <p><em>Available for commissions & anime collabs.</em></p>
+  </section>
+
+</body>
+</html>
